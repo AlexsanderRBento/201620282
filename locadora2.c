@@ -45,9 +45,35 @@ typedef struct cliente
 	switch(escolha)
 {
 	case 1:
+			system clear;
 	printf("digite nome do filme\n");
+	open("filmes.txt","w");
 	break;
 }
+{
+	case 2:
+			system clear;
+	printf("digite nome do cliente\n");
+	open("clientes.txt","w");
+	break;
+{	
+	case 3:
+			system clear;
+	open("filmes.txt","r");
+	break;
+}
+	case 4:
+			system clear;
+	open("clientes.txt","r");
+	break;
+}
+{
+	case 5:
+			system clear;
+	open("filmes.txt","r");
+	break;
+}
+	
 return (0);
 
 }
