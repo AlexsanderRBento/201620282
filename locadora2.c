@@ -1,5 +1,3 @@
-
- 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,20 +9,22 @@ int escolha;
 typedef struct filme
 {
 	
-	int id[];
-	int id_cliente[];
+	int id[1000];
+	int id_cliente[1000];
 	char nome[1000];
 
-} t_filme;
+} ;
+struct filme filmes;
  
  
 
 typedef struct cliente
 {
 	
-	int id[];
+	int id[1000];
 	char nome[1000];
-} t_cliente;
+} ;
+struct cliente clientes;
 
 
 
@@ -45,37 +45,38 @@ typedef struct cliente
 	switch(escolha)
 {
 	case 1:
-			system clear;
+			system ("clear");
 	printf("digite nome do filme\n");
-	open("filmes.txt","w");
+	setbuf(stdin, NULL);
+	fgets(filmes.nome,1000,stdin);
+	printf("digite o ID do filme\n");
+	setbuf(stdin, NULL);
+	fgets(filmes.id,1000,stdin);
+	
 	break;
-}
-{
+
 	case 2:
-			system clear;
+			system ("clear");
 	printf("digite nome do cliente\n");
-	open("clientes.txt","w");
+	
 	break;
-{	
+	
 	case 3:
-			system clear;
-	open("filmes.txt","r");
+			system ("clear");
+	
 	break;
-}
+
 	case 4:
-			system clear;
-	open("clientes.txt","r");
+			system ("clear");
+	
 	break;
-}
-{
+
 	case 5:
-			system clear;
-	open("filmes.txt","r");
+			system ("clear");
+	
 	break;
 }
 	
 return (0);
 
 }
-
-
