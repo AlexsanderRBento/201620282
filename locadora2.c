@@ -4,24 +4,26 @@
 #include <fcntl.h>
 
 
+
+
 int main() {
 int escolha;
 
 typedef struct filme
 {
-	
+
 	char id[1000];
 	char id_cliente[1000];
 	char nome[1000];
 
 } ;
 struct filme filmes;
- 
- 
+
+
 
 typedef struct cliente
 {
-	
+
 	char id[1000];
 	char nome[1000];
 } ;
@@ -30,7 +32,7 @@ struct cliente clientes;
 
 
 
- 
+
 	printf("\n\n1 - Cadastrar um filme\n");
 	printf("2 - Cadastrar um cliente\n");
 	printf("3 - Listar todos os filmes\n");
@@ -47,16 +49,19 @@ struct cliente clientes;
 {
 	case 1:
 			system ("clear");
-	fopen("movies.txt","ab");
+	FILE *fp;
+	fp = fopen("movies.txt","ab");
 	printf("digite nome do filme\n");
 	setbuf(stdin, NULL);
 	fgets(filmes.nome,1000,stdin);
 	printf("digite o ID do filme\n");
 	setbuf(stdin, NULL);
 	fgets(filmes.id,1000,stdin);
-	fclose("movies.txt");
-	
+	fwrite(&filmes, sizeof(filmes),1000,fp);
+	fclose(fp);
+
 	break;
+
 
 	case 2:
 			system ("clear");
@@ -66,6 +71,28 @@ struct cliente clientes;
 	
 	case 3:
 			system ("clear");
+	
+	break;
+
+	case 4:
+			system ("clear");
+	
+	break;
+
+	case 5:
+			system ("clear");
+	
+	break;
+	
+	default:
+	printf("entrada invalida\n");
+	
+	
+}
+	
+return (0);
+
+}
 	
 	break;
 
