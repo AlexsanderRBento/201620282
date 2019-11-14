@@ -3,14 +3,15 @@
 #include <string.h>
 #include <fcntl.h>
 
+
 int main() {
 int escolha;
 
 typedef struct filme
 {
 	
-	int id[1000];
-	int id_cliente[1000];
+	char id[1000];
+	char id_cliente[1000];
 	char nome[1000];
 
 } ;
@@ -21,7 +22,7 @@ struct filme filmes;
 typedef struct cliente
 {
 	
-	int id[1000];
+	char id[1000];
 	char nome[1000];
 } ;
 struct cliente clientes;
@@ -46,12 +47,14 @@ struct cliente clientes;
 {
 	case 1:
 			system ("clear");
+	fopen("movies.txt","ab");
 	printf("digite nome do filme\n");
 	setbuf(stdin, NULL);
 	fgets(filmes.nome,1000,stdin);
 	printf("digite o ID do filme\n");
 	setbuf(stdin, NULL);
 	fgets(filmes.id,1000,stdin);
+	fclose("movies.txt");
 	
 	break;
 
@@ -75,6 +78,11 @@ struct cliente clientes;
 			system ("clear");
 	
 	break;
+	
+	default:
+	printf("entrada invalida\n");
+	
+	
 }
 	
 return (0);
