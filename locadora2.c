@@ -66,6 +66,16 @@ struct cliente clientes;
 	case 2:
 			system ("clear");
 	printf("digite nome do cliente\n");
+		FILE *cp;
+	cp = fopen("client.txt","ab");
+	printf("digite nome do cliente\n");
+	setbuf(stdin, NULL);
+	fgets(clientes.nome,1000,stdin);
+	printf("digite o ID do cliente\n");
+	setbuf(stdin, NULL);
+	fgets(clientes.id,1000,stdin);
+	fwrite(&clientes, sizeof(clientes),1000,cp);
+	fclose(cp);
 	
 	break;
 	
