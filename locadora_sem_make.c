@@ -524,7 +524,7 @@ pesquisar_filme ()
       strcpy (nome_aux, filme.nome);
 
 
-      if (strcmp (strupr (nome_aux), strupr (nome)) == 0)
+      if (strcmp ((nome_aux),  (nome)) == 0)
 	{
 
 	  printf ("ID do filme: %d\n", filme.id);
@@ -600,7 +600,7 @@ pesquisar_cliente ()
       strcpy (nome_aux, cliente.nome);
 
 
-      if (strcmp (strupr (nome_aux), strupr (nome)) == 0)
+      if (strcmp ((nome_aux),  (nome)) == 0)
 	{
 
 	  printf ("ID do cliente: %d\n\n", cliente.id);
