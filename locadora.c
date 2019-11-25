@@ -847,6 +847,10 @@ void PDF ()
     system ("$ enscript -p output2.ps filmes.txt");
     system ("$ ps2pdf output.ps output.pdf");
     system ("$ ps2pdf output2.ps output2.pdf");
+    system(" $ pdf.sh filmes.txt");
+    system("$ ls -l filmes.txt.pdf");
+    system(" $ pdf.sh clientes.txt");
+    system("$ ls -l clientes.txt.pdf");
    }
 
 
